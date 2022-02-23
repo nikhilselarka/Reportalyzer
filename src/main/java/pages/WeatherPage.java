@@ -7,7 +7,7 @@ public class WeatherPage {
     static public Response response;
 
     public static void requestWeatherWithGet(String latitude, String longitude) {
-        response = SerenityRest.get("https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&appid=6f561d7772a05a222946ca23ea2042e0");
+        response = SerenityRest.get("https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&appid=");
         System.out.println("Response ----> " + response);
         //List<Map<String, String>> responseDataList = response.jsonPath().getList("data");
         //System.out.println(" Response Data list :: " + responseDataList);
@@ -24,12 +24,12 @@ public class WeatherPage {
     }
 
     public static void requestWeatherWithGet(String city) {
-        response = SerenityRest.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=6f561d7772a05a222946ca23ea2042e0");
+        response = SerenityRest.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=");
         System.out.println("Response ----> " + response);
     }
 
     public static void checkWeatherEndpointHealth() {
-        response = SerenityRest.get("https://api.openweathermap.org/data/2.5/weather?q&appid=6f561d7772a05a222946ca23ea2042e0");
+        response = SerenityRest.get("https://api.openweathermap.org/data/2.5/weather?q&appid=");
         System.out.println("Response ----> " + response);
     }
 }
